@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class LadderMovement : MonoBehaviour
 {
-    //private MovementController MovementController;
+    private MovementController MovementController;
 
     private float vertical;
     private float speed = 8f;
