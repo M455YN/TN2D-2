@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
+using TMPro;
 
 public class MovementController : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class MovementController : MonoBehaviour
     public Animator animator;
     public GameObject dashIcon;
     private float horizontal;
+    public TextMeshPro cooldownText;
 
     [Header("Player Movement Variables")]
     [SerializeField] private float speed = 2f; // Movement speed
