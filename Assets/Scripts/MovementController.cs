@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
 using TMPro;
+using UnityEngine.UI;
 
 public class MovementController : MonoBehaviour
 {
@@ -22,14 +23,27 @@ public class MovementController : MonoBehaviour
     [SerializeField] private float dashDuration = 0.2f; // Duration of the dash
     [SerializeField] private int cooldownTime = 5; // Cooldown time between dashes
 
+    [Header("HP Variables")]
+    public Gradient gradient;
+    public Slider healthGracza;
+    [SerializeField] [Range(0.0f, 10f)] private int HP = 10;
+    [SerializeField] private float maxHP = 10;
+
     private int jumpCount = 0;
-    private bool isFacingRight = true;
-    private bool isJumping = false;
+    public bool isFacingRight = true;
+    public bool isJumping = false;
     private bool isDashing = false;
     private bool isCoolingDown = false;
 
+    void Start()
+    {
+        healthGracza.maxValue = maxHP;
+        healthGracza.value = HP;
+    }
     void Update()
     {
+        UpdateHealthBarColor();
+        healthGracza.value = HP;
         if ((isFacingRight && horizontal < 0f) || (!isFacingRight && horizontal > 0f))
         {
             Flip();
@@ -140,5 +154,15 @@ public class MovementController : MonoBehaviour
     {
         isJumping = false;
         jumpCount = 0;
+    }
+
+    void UpdateHealthBarColor()
+    {
+        float normalizedHP = HP / maxHP;
+        Color healthColor = gradient.Evaluate(normalizedHP); // Pobierz kolor z Gradientu
+
+        // Ustaw kolor paska zdrowia
+        Image fillImage = healthGracza.fillRect.GetComponent<Image>();
+        fillImage.color = healthColor;
     }
 }

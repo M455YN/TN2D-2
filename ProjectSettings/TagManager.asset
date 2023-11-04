@@ -5,15 +5,18 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ladder
+  - Shuriken
+  - Throwable
+  - EnemyTag
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - 
-  - 
+  - Enemy
+  - Shuriken
   - Ground
   - 
   - 
@@ -37,7 +40,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - PostProcesing
   m_SortingLayers:
   - name: Default
     uniqueID: 0

@@ -24,7 +24,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Fire",
+                    "name": "ShurikenAttack",
                     "type": "Button",
                     "id": "dc1c8992-6f7c-4651-87ef-0fcb7c7ef17f",
                     "expectedControlType": "Button",
@@ -54,6 +54,15 @@
                     "name": "Dash",
                     "type": "Button",
                     "id": "17efdd64-b7d5-4d1e-a7ae-18923725626b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Attack",
+                    "type": "Button",
+                    "id": "493911b3-68ea-4f09-9f15-d0de2065c8ec",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -233,18 +242,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Gamepad",
-                    "action": "Fire",
+                    "action": "ShurikenAttack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
                     "id": "05f6913d-c316-48b2-a6bb-e225f14c7960",
-                    "path": "<Mouse>/leftButton",
+                    "path": "<Keyboard>/x",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
-                    "action": "Fire",
+                    "action": "ShurikenAttack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -255,7 +264,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Touch",
-                    "action": "Fire",
+                    "action": "ShurikenAttack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -266,7 +275,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Joystick",
-                    "action": "Fire",
+                    "action": "ShurikenAttack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -277,7 +286,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "XR",
-                    "action": "Fire",
+                    "action": "ShurikenAttack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -344,6 +353,17 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "dbc3169c-7ea4-44d8-a477-029dbf27ce3f",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

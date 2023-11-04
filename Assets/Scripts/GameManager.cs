@@ -12,6 +12,6 @@ public class GameManager : MonoBehaviour
         Time.timeScale = isPaused ? 0 : 1; // Zatrzymaj czas lub wznow jego dzia³anie
                                            // Dodaj tutaj kod do wyœwietlenia lub ukrycia interfejsu pauzy
 
-        SceneManager.LoadScene("MainMenu");
+        //SceneManager.LoadScene("MainMenu");
     }
 }
