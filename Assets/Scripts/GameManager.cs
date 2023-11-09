@@ -6,12 +6,13 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     private bool isPaused;
+    public GameObject pauseMenu;
     public void TogglePause()
     {
         isPaused = !isPaused;
         Time.timeScale = isPaused ? 0 : 1; // Zatrzymaj czas lub wznow jego dzia³anie
                                            // Dodaj tutaj kod do wyœwietlenia lub ukrycia interfejsu pauzy
-
+        pauseMenu.SetActive(!pauseMenu.activeSelf);
         //SceneManager.LoadScene("MainMenu");
     }
 }
