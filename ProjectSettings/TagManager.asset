@@ -8,6 +8,7 @@ TagManager:
   - Shuriken
   - Throwable
   - EnemyTag
+  - Water
   layers:
   - Default
   - TransparentFX
@@ -39,9 +40,24 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Tilemap
   - PostProcesing
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Tilemap BG
+    uniqueID: 349069581
+    locked: 0
+  - name: Tilemap Ground
+    uniqueID: 2289092911
+    locked: 0
+  - name: Player
+    uniqueID: 1129758639
+    locked: 0
+  - name: Tilemap FG
+    uniqueID: 1183785899
+    locked: 0
+  - name: UI
+    uniqueID: 3919817975
     locked: 0
