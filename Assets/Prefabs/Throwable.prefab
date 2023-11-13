@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2628809426971465105}
   - component: {fileID: 1907577299256418467}
   - component: {fileID: 5038793811386987065}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Throwable
   m_TagString: Throwable
   m_Icon: {fileID: 0}

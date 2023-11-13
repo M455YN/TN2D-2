@@ -35,26 +35,26 @@ public class ShurikenDamage : MonoBehaviour
             Destroy(gameObject);
         }
         
-        if (other.CompareTag("Player")) // Replace "EnemyTag" with your enemy's tag
-        {
-            MovementController playerHealth = other.GetComponent<MovementController>();
-
-            // Check if the enemy has the EnemyHealth component
-            if (playerHealth != null)
-            {
-                // Deal damage to the enemy
-                playerHealth.TakeDamage(damage);
-            }
-
-            // Destroy the shuriken after hitting an enemy
-            Destroy(gameObject);
-        }
-
-        // Check collision with the player to prevent friendly fire
-        //if (other.CompareTag("Player") && playerAttackScript != null)
+        //if (other.CompareTag("Player")) // Replace "EnemyTag" with your enemy's tag
         //{
-        //    // Ignore collision with the player, destroy the shuriken
+        //    MovementController playerHealth = other.GetComponent<MovementController>();
+        //
+        //    // Check if the enemy has the EnemyHealth component
+        //    if (playerHealth != null)
+        //    {
+        //        // Deal damage to the enemy
+        //        playerHealth.TakeDamage(damage);
+        //    }
+        //
+        //    // Destroy the shuriken after hitting an enemy
         //    Destroy(gameObject);
         //}
+
+        // Check collision with the player to prevent friendly fire
+        if (other.CompareTag("Player") && playerAttackScript != null)
+        {
+            // Ignore collision with the player, destroy the shuriken
+            Destroy(gameObject);
+        }
     }
 }
