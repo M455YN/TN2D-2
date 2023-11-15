@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ShurikenDamage : MonoBehaviour
 {
-    private int damage = 0;
+    private int damage = 5;
     private PlayerAttack playerAttackScript;
 
     // Set the damage value for the shuriken

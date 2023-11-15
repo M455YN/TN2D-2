@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 using System.Collections;
 using TMPro;
 using UnityEngine.UI;
+using System.Linq.Expressions;
 
 public class MovementController : MonoBehaviour
 {
@@ -27,7 +28,7 @@ public class MovementController : MonoBehaviour
     [Header("HP Variables")]
     public Gradient gradient;
     public Slider healthGracza;
-    [SerializeField] [Range(0.0f, 10f)] private int HP = 10;
+    [SerializeField][Range(0.0f, 10f)] private int HP = 10;
     [SerializeField] private float maxHP = 10;
 
     private int jumpCount = 0;
@@ -36,6 +37,7 @@ public class MovementController : MonoBehaviour
     private bool isDashing = false;
     private bool isCoolingDown = false;
 
+    public bool canMove = true;
     void Start()
     {
         healthGracza.maxValue = maxHP;
@@ -55,18 +57,22 @@ public class MovementController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
-        animator.SetFloat("Speed", Mathf.Abs(horizontal));
-
-        if (IsGrounded() && !isJumping)
+        if (canMove)
         {
-            OnLand();
+            rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+            animator.SetFloat("Speed", Mathf.Abs(horizontal));
+
+            if (IsGrounded() && !isJumping)
+            {
+                OnLand();
+            }
         }
+
     }
 
     public void Jump(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.performed && canMove)
         {
             if (IsGrounded())
             {
@@ -83,7 +89,7 @@ public class MovementController : MonoBehaviour
             }
         }
 
-        if (context.canceled && rb.velocity.y >= 0f)
+        if (context.canceled && rb.velocity.y >= 0f && canMove)
         {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
             isJumping = false;
@@ -93,7 +99,7 @@ public class MovementController : MonoBehaviour
 
     public void Dash(InputAction.CallbackContext context)
     {
-        if (context.performed && !isDashing && !isCoolingDown)
+        if (context.performed && !isDashing && !isCoolingDown && canMove)
         {
             StartCoroutine(PerformDash());
             dashIcon.SetActive(false); // Wy³¹cz ikonê dasha
@@ -141,10 +147,13 @@ public class MovementController : MonoBehaviour
 
     private void Flip()
     {
-        isFacingRight = !isFacingRight;
-        Vector3 localScale = transform.localScale;
-        localScale.x *= -1f;
-        transform.localScale = localScale;
+        if (canMove)
+        {
+            isFacingRight = !isFacingRight;
+            Vector3 localScale = transform.localScale;
+            localScale.x *= -1f;
+            transform.localScale = localScale;
+        }
     }
 
     public void Move(InputAction.CallbackContext context)
@@ -198,6 +207,8 @@ public class MovementController : MonoBehaviour
     {
         // Perform death-related actions here, such as playing death animation, dropping items, etc.
         animator.SetBool("IsDead", true);
+        canMove = false;
+
         //Destroy(gameObject); // Destroy the enemy GameObject when it dies
     }
 

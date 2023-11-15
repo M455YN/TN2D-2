@@ -18,9 +18,15 @@ public class PlayerAttack : MonoBehaviour
     public float attackRange = 1.5f;
 
     private bool meleeAttackReady = true;
+
+    private MovementController movementController;
+    private void Start()
+    {
+        movementController = GetComponent<MovementController>();
+    }
     public void OnShurikenAttack(InputAction.CallbackContext context)
     {
-        if (context.performed && shurikenCount > 0)
+        if (context.performed && shurikenCount > 0 && movementController.canMove)
         {
             Debug.Log("Shuriken attack performed!"); // Debug log for testing
 
@@ -44,7 +50,7 @@ public class PlayerAttack : MonoBehaviour
 
     public void OnMeleeAttack(InputAction.CallbackContext context)
     {
-        if (context.performed && !MovementController.isJumping && meleeAttackReady)
+        if (context.performed && !MovementController.isJumping && meleeAttackReady && movementController.canMove)
         {
             meleeAttackReady = false;
             Debug.Log("Melee attack performed!"); // Debug log for testing

@@ -75,7 +75,7 @@ public class EnemyAI : MonoBehaviour
         shuriken.layer = LayerMask.NameToLayer("Shuriken");
 
         ShurikenDamageAI shurikenDamageComponent = shuriken.AddComponent<ShurikenDamageAI>();
-        shurikenDamageComponent.SetDamage(0);
+        shurikenDamageComponent.SetDamage(5);
     }
 
     private void FixedUpdate()
