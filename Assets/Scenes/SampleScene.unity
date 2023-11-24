@@ -1494,7 +1494,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -4093,6 +4093,36 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+  - first: {x: 14, y: -6, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 15
+      m_TileSpriteIndex: 6
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: 15, y: -6, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 15
+      m_TileSpriteIndex: 6
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: 16, y: -6, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 15
+      m_TileSpriteIndex: 6
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: 17, y: -6, z: 0}
     second:
       serializedVersion: 2
@@ -4905,8 +4935,8 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: d80f9bf3dc291934b944bb716f66a836, type: 2}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 3
+    m_Data: {fileID: 11400000, guid: 58ccd30132c5b92418d34d8c2390813d, type: 2}
   - m_RefCount: 4
     m_Data: {fileID: 11400000, guid: 06de33ef874ea5644a66d021d3554fd1, type: 2}
   - m_RefCount: 1
@@ -4928,8 +4958,8 @@ Tilemap:
     m_Data: {fileID: 1534880229, guid: a837e64deb3fa3643a56195bca96caad, type: 3}
   - m_RefCount: 5
     m_Data: {fileID: 1662108271, guid: a837e64deb3fa3643a56195bca96caad, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 3
+    m_Data: {fileID: 552885332, guid: a837e64deb3fa3643a56195bca96caad, type: 3}
   - m_RefCount: 17
     m_Data: {fileID: -91345467, guid: a837e64deb3fa3643a56195bca96caad, type: 3}
   - m_RefCount: 163
@@ -4957,7 +4987,7 @@ Tilemap:
   - m_RefCount: 2
     m_Data: {fileID: 691946128, guid: a837e64deb3fa3643a56195bca96caad, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 305
+  - m_RefCount: 308
     m_Data:
       e00: 1
       e01: 0
@@ -4976,7 +5006,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 305
+  - m_RefCount: 308
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -7924,7 +7954,7 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   healthGracza: {fileID: 12095487}
   HP: 10
-  maxHP: 10
+  maxHP: 9999
   isFacingRight: 1
   isJumping: 0
   canMove: 1
@@ -9015,11 +9045,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2395438333834455252, guid: 8e7b92d7e05254a40bbb1955ac3d564b, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2395438333834455252, guid: 8e7b92d7e05254a40bbb1955ac3d564b, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2629628237661161295, guid: 8e7b92d7e05254a40bbb1955ac3d564b, type: 3}
       propertyPath: m_SortingLayerID
@@ -9031,7 +9061,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2871026981353837691, guid: 8e7b92d7e05254a40bbb1955ac3d564b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2871026981353837691, guid: 8e7b92d7e05254a40bbb1955ac3d564b, type: 3}
       propertyPath: m_TagString
@@ -9051,7 +9081,7 @@ PrefabInstance:
       objectReference: {fileID: 193414148}
     - target: {fileID: 5735034577044461221, guid: 8e7b92d7e05254a40bbb1955ac3d564b, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5735034577044461221, guid: 8e7b92d7e05254a40bbb1955ac3d564b, type: 3}
       propertyPath: rightPoint
@@ -9099,15 +9129,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7317814839804227588, guid: 8e7b92d7e05254a40bbb1955ac3d564b, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7317814839804227588, guid: 8e7b92d7e05254a40bbb1955ac3d564b, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7317814839804227588, guid: 8e7b92d7e05254a40bbb1955ac3d564b, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7854641791677973379, guid: 8e7b92d7e05254a40bbb1955ac3d564b, type: 3}
       propertyPath: m_Mass
