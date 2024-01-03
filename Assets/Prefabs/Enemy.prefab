@@ -161,7 +161,7 @@ GameObject:
   - component: {fileID: 5735034577044461221}
   - component: {fileID: 5623054479034686313}
   - component: {fileID: 6852915679872938936}
-  - component: {fileID: 3912820084432850083}
+  - component: {fileID: 8413700880277301136}
   m_Layer: 6
   m_Name: Enemy
   m_TagString: Untagged
@@ -338,8 +338,8 @@ MonoBehaviour:
     m_ColorSpace: -1
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
---- !u!60 &3912820084432850083
-PolygonCollider2D:
+--- !u!58 &8413700880277301136
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -370,43 +370,9 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.56, y: 2.56}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.19999999, y: -0.38}
-      - {x: 0.32999998, y: -0.26999998}
-      - {x: 0.35, y: -0.19}
-      - {x: 0.34, y: -0.08}
-      - {x: 0.37, y: 0.01}
-      - {x: 0.42, y: 0.06}
-      - {x: 0.42, y: 0.26999998}
-      - {x: 0.29, y: 0.39}
-      - {x: 0.19999999, y: 0.42}
-      - {x: -0.14, y: 0.42}
-      - {x: -0.19, y: 0.37}
-      - {x: -0.26, y: 0.24}
-      - {x: -0.26999998, y: 0.07}
-      - {x: -0.24, y: 0.049999997}
-      - {x: -0.28, y: -0.12}
-      - {x: -0.32999998, y: -0.13}
-      - {x: -0.38, y: -0.19999999}
-      - {x: -0.38, y: -0.26}
-      - {x: -0.32999998, y: -0.31}
-      - {x: -0.22999999, y: -0.32}
-      - {x: -0.21, y: -0.38}
-      - {x: -0.07, y: -0.38}
-      - {x: -0.049999997, y: -0.35}
-      - {x: 0.08, y: -0.38}
-  m_UseDelaunayMesh: 0
+  m_Offset: {x: -0.030292034, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.37357378
 --- !u!1 &3790007965416997191
 GameObject:
   m_ObjectHideFlags: 0
