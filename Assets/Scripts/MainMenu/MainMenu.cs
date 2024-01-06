@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
-    public string levelToLoad = "Level1"; // Name of the scene to load
+    public string levelToLoad = "SampleScene"; // Name of the scene to load
     public GameObject optionsMenu; // Reference to the options menu object
 
     // Settings variables
@@ -23,9 +23,14 @@ public class MainMenu : MonoBehaviour
         ApplySettings();
     }
 
-    public void StartGame()
+    public void OnNewGameClick()
     {
         SceneManager.LoadScene(levelToLoad);
+    }
+
+    public void OnContinueGameClick()
+    {
+
     }
 
     public void OpenOptions()

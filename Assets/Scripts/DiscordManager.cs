@@ -95,11 +95,17 @@ public class DiscordManager : MonoBehaviour
 
     void Update()
     {
-        discord.RunCallbacks();
+        if (discord != null)
+        {
+            discord.RunCallbacks();
+        }
     }
 
     void OnDisable()
     {
-        discord.Dispose();
+        if (discord != null)
+        {
+            discord.Dispose();
+        }
     }
 }

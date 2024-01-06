@@ -10,26 +10,28 @@ public class DataPersistenceManager : MonoBehaviour
     [SerializeField] private bool useEncryption;
 
     private GameData gameData;
-    public static DataPersistenceManager instance { get; private set; }
     private List<IDataPersistence> dataPersistenceObjects;
     private FileDataHandler dataHandler;
 
-    private void Awake()
+    public static DataPersistenceManager instance { get; private set; }
+
+    private void Awake() 
     {
-        if (instance != null)
+        if (instance != null) 
         {
-            Debug.LogError("Found more than one Data Persistancve Managager in the scene.");
+            Debug.LogError("Found more than one Data Persistence Manager in the scene.");
         }
         instance = this;
     }
 
-    private void Start()
+    private void Start() 
     {
-        this.dataHandler = new FileDataHandler(Application.persistentDataPath, fileName/*, useEncryption*/);
+        this.dataHandler = new FileDataHandler(Application.persistentDataPath, fileName, useEncryption);
         this.dataPersistenceObjects = FindAllDataPersistenceObjects();
         LoadGame();
     }
-    public void NewGame()
+
+    public void NewGame() 
     {
         this.gameData = new GameData();
     }
@@ -37,17 +39,17 @@ public class DataPersistenceManager : MonoBehaviour
     public void LoadGame()
     {
         // load any saved data from a file using the data handler
-        this.gameData = dataHandler.Load(/*selectedProfileId*/);
-
-        //if no data can be loaded, initialize to a new game
-        if (this.gameData == null)
+        this.gameData = dataHandler.Load();
+        
+        // if no data can be loaded, initialize to a new game
+        if (this.gameData == null) 
         {
-            Debug.Log("No data was found. initializing data to defaults.");
+            Debug.Log("No data was found. Initializing data to defaults.");
             NewGame();
         }
 
         // push the loaded data to all other scripts that need it
-        foreach (IDataPersistence dataPersistenceObj in dataPersistenceObjects)
+        foreach (IDataPersistence dataPersistenceObj in dataPersistenceObjects) 
         {
             dataPersistenceObj.LoadData(gameData);
         }
@@ -56,25 +58,23 @@ public class DataPersistenceManager : MonoBehaviour
     public void SaveGame()
     {
         // pass the data to other scripts so they can update it
-        foreach (IDataPersistence dataPersistenceObj in dataPersistenceObjects)
+        foreach (IDataPersistence dataPersistenceObj in dataPersistenceObjects) 
         {
-            dataPersistenceObj.SaveData(ref gameData);
+            dataPersistenceObj.SaveData(gameData);
         }
 
         // save that data to a file using the data handler
-        dataHandler.Save(gameData/*, selectedProfileId*/);
-
+        dataHandler.Save(gameData);
     }
 
-    private void OnApplicationQuit()
+    private void OnApplicationQuit() 
     {
         SaveGame();
     }
 
-    private List<IDataPersistence> FindAllDataPersistenceObjects()
+    private List<IDataPersistence> FindAllDataPersistenceObjects() 
     {
-        // FindObjectsofType takes in an optional boolean to include inactive gameobjects
-        IEnumerable<IDataPersistence> dataPersistenceObjects = FindObjectsOfType<MonoBehaviour>(true)
+        IEnumerable<IDataPersistence> dataPersistenceObjects = FindObjectsOfType<MonoBehaviour>()
             .OfType<IDataPersistence>();
 
         return new List<IDataPersistence>(dataPersistenceObjects);
