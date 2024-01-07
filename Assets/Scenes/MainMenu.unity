@@ -818,12 +818,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f32b22d199cccdd4ea3c835e121ddd45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  newGameButton: {fileID: 1718635349}
+  continueGameButton: {fileID: 240618123}
   levelToLoad: SampleScene
-  optionsMenu: {fileID: 0}
-  defaultVolume: 0.5
-  defaultQuality: 2
-  volumeSlider: {fileID: 0}
-  qualityDropdown: {fileID: 0}
 --- !u!224 &1740032172
 RectTransform:
   m_ObjectHideFlags: 0
